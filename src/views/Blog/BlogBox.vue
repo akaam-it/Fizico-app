@@ -1,7 +1,6 @@
 <template>
   <div
-    class="blog flex flex-col bg-white dark:bg-slate-800 overflow-hidden rounded-2xl"
-  >
+    class="blog flex flex-col bg-white dark:bg-slate-800 overflow-hidden rounded-2xl">
     <router-link :to="{ name: data.link }" class="block h-45">
       <img
         :src="data.image"
@@ -18,8 +17,7 @@
         <router-link :to="{ name: data.link } ">{{ data.title }}</router-link>
       </h3>
       <p
-        class="text-sm line-clamp-2 dark:text-slate-300 text-zinc-700 opacity-80"
-      >
+        class="text-sm line-clamp-2 dark:text-slate-300 text-zinc-700 opacity-80">
         {{ data.summary }}
       </p>
     </div>

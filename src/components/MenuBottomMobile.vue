@@ -122,11 +122,49 @@
           تم
         </span>
       </div>
-      <router-link
-        :to="{ name: 'Login' }"
+       <div
+        @click="toggleCartBox"
         class="group relative px-3 cursor-pointer"
-        data-v-inspector="src/components/MenuBottomMobile.vue:95:5"
-      >
+        data-v-inspector="src/components/MenuBottomMobile.vue:95:5">
+        <div
+          v-show="cartStore.items.length > 0"
+          class="absolute flex items-center justify-center top-0 left-3 bg-red-500 text-white font-DanaLight rounded-full pt-2 pb-1 pl-[6px] pr-[7px] text-[14px]/[0.3rem]"
+        >
+          {{ cartStore.items.length }}
+        </div>
+        <div
+          class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-blue-50 dark:text-slate-100 text-zinc-800 hover:text-Fizico-color1 transition-colors duration-300"
+          data-v-inspector="src/components/MenuBottomMobile.vue:96:7">
+          <svg
+            class="group-hover:scale-110 transition-transform duration-300"
+            width="25"
+            height="25"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            data-v-inspector="src/components/MenuBottomMobile.vue:99:9"
+          >
+            <use
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke-width="1.5"
+              stroke="currentColor"
+              data-v-inspector="src/components/MenuBottomMobile.vue:114:11"
+              href="#shopping-cart"
+            ></use>
+          </svg>
+        </div>
+        <span
+          class="absolute -top-12 left-[50%] -translate-x-[50%] z-20 origin-bottom scale-0 px-3 py-1.5 rounded-lg border border-gray-200 bg-white text-xs font-medium shadow-lg transition-all duration-300 ease-in-out group-hover:scale-100 before:absolute before:bottom-[-5px] before:left-[50%] before:-translate-x-[50%] before:border-[6px] before:border-transparent before:border-t-white"
+          data-v-inspector="src/components/MenuBottomMobile.vue:123:7"
+        >
+          سبدخرید
+        </span>
+      </div>
+      <router-link
+        :to="authState.isAuthenticated ?{ name: 'Dashboard' }:{ name: 'Login' }"      
+        class="group relative px-3 cursor-pointer"
+        data-v-inspector="src/components/MenuBottomMobile.vue:95:5">
         <div
           class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-blue-50 dark:text-slate-100 text-zinc-800 hover:text-Fizico-color1 transition-colors duration-300"
           data-v-inspector="src/components/MenuBottomMobile.vue:96:7"
@@ -157,54 +195,15 @@
           حساب
         </span>
       </router-link>
-      <div
-        @click="toggleCartBox"
-        class="group relative px-3 cursor-pointer"
-        data-v-inspector="src/components/MenuBottomMobile.vue:95:5"
-      >
-        <div
-          v-show="cartStore.items.length > 0"
-          class="absolute flex items-center justify-center top-0 left-3 bg-red-500 text-white font-DanaLight rounded-full pt-2 pb-1 pl-[6px] pr-[7px] text-[14px]/[0.3rem]"
-        >
-          {{ cartStore.items.length }}
-        </div>
-
-        <div
-          class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-blue-50 dark:text-slate-100 text-zinc-800 hover:text-Fizico-color1 transition-colors duration-300"
-          data-v-inspector="src/components/MenuBottomMobile.vue:96:7"
-        >
-          <svg
-            class="group-hover:scale-110 transition-transform duration-300"
-            width="25"
-            height="25"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            data-v-inspector="src/components/MenuBottomMobile.vue:99:9"
-          >
-            <use
-              stroke-linejoin="round"
-              stroke-linecap="round"
-              stroke-width="1.5"
-              stroke="currentColor"
-              data-v-inspector="src/components/MenuBottomMobile.vue:114:11"
-              href="#shopping-cart"
-            ></use>
-          </svg>
-        </div>
-        <span
-          class="absolute -top-12 left-[50%] -translate-x-[50%] z-20 origin-bottom scale-0 px-3 py-1.5 rounded-lg border border-gray-200 bg-white text-xs font-medium shadow-lg transition-all duration-300 ease-in-out group-hover:scale-100 before:absolute before:bottom-[-5px] before:left-[50%] before:-translate-x-[50%] before:border-[6px] before:border-transparent before:border-t-white"
-          data-v-inspector="src/components/MenuBottomMobile.vue:123:7"
-        >
-          سبدخرید
-        </span>
-      </div>
+     
     </div>
   </div>
 </template>
 
 <script setup>
 import { useCartStore } from "@/stores/cart";
+import {authState} from '@/composables/login.js'
+
 const cartStore = useCartStore();
 </script>
 

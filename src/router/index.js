@@ -11,7 +11,8 @@ import MyCourses from "@/views/Dashboard/MyCourses.vue";
 import EditProfile from "@/views/Dashboard/EditProfile.vue";
 import Walet from "@/views/Dashboard/Walet.vue";
 import Tickets from "@/views/Dashboard/Tickets.vue";
-import MyAccount from "@/views/Dashboard/MyAccount.vue";
+import MyAccount from "@/views/Dashboard/MyAccount.vue"; 
+import AddNewTicket from "@/views/Dashboard/AddNewTicket.vue"; 
 
 const routes = [
   {
@@ -57,6 +58,7 @@ const routes = [
   },
   {
     path: "/dashboard",
+    name: 'Dashboard',
     redirect: "/dashboard/home",
     component: Dashboard,
     meta: { title: "پنل کاربری" },
@@ -69,21 +71,18 @@ const routes = [
         path: "my-courses",
         component: MyCourses,
       },
-      {
-        path: "edit-profile",
-        component: EditProfile,
-      },
+   
       {
         path: "walet",
         component: Walet,
       },
-      {
-        path: "questions",
-        component: Questions,
-      },
+   
       {
         path: "tickets",
         component: Tickets,
+      }, {
+        path: "add-ticket",
+        component: AddNewTicket,
       },
     ],
   },

@@ -1,6 +1,8 @@
 <script setup>
 import { useCartStore } from "@/stores/cart";
-    const cartStore = useCartStore();   
+import {authState} from '@/composables/login.js'
+
+const cartStore = useCartStore();   
 
 
 </script>
@@ -85,13 +87,16 @@ export default {
 </script>
 <template>
   
+   <MenuBottomMobile  class='lg:hidden' />
+ <div
+    :class='dashboard ?"hidden lg:block":"" '
+ >
   <OverLay v-model="overlayActive" @closeAll="closeAllItems" />
   <nav
     class=" w-full tracking-tighter mt-2  md:py-2 transition-all"
-    :class="(hidden ? 'hidden' : '')"  >
-    <MenuBottomMobile  v-if='!dashboard'  class='lg:hidden' />
+   > 
   <SearchBox v-model="isSearchOpen" @checkOverlay="checkOverlay" />
-<BackToUp v-if='!dashboard'/>
+  <BackToUp v-if='!dashboard'/>
     <div
       id="Nav"
       class="flex items-center container"
@@ -200,8 +205,11 @@ export default {
         </div>
 
         <!-- Login Button -->
+       
+       <div v-if='!dashboard'>
         <router-link 
-         v-if='!dashboard' 
+         v-show='!authState.isAuthenticated'
+         
           :to="{ name: 'Login' }"
           class="hidden cursor-pointer lg:flex items-center justify-center gap-x-1 sm:bg-Fizico-color1 text-white py-2 md:px-3 rounded-3xl lg:hover:-mb-1 transition-all"
         >
@@ -211,7 +219,20 @@ export default {
 
           <span class="inline"> ورود | ثبت نام </span>
         </router-link>
+        <router-link 
+         v-show='authState.isAuthenticated'
+          :to="{ name: 'Dashboard' }"
+          class="hidden cursor-pointer lg:flex items-center justify-center gap-x-1 sm:bg-Fizico-color1 text-white py-2 md:px-3 rounded-3xl lg:hover:-mb-1 transition-all"
+        >
+          <svg class="inline w-5 h-5 ">
+            <use href="#user"></use>
+          </svg>
+
+          <span  class="inline"> حساب کاربری   </span>
+        </router-link>
+       </div>
       </div>
     </div>
   </nav>
+ </div>
 </template>

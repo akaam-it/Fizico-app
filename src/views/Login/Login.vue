@@ -1,3 +1,8 @@
+<script setup>
+import {authState} from '@/composables/login.js'
+
+</script>
+
 <script>
 import { ref } from "vue";
 import SvgIcons from "../../components/SvgIcons.vue";
@@ -49,11 +54,10 @@ export default {
         this.$refs.notif.showNotifHandler();
         this.textNotif ='شما با موفقیت وارد حساب شدید!'
         this.typeNotif = true
+        authState.login()
       } catch (err) {
         this.$refs.notif.showNotifHandler();
         this.textNotif ='خطا ! هنگام ورود به حساب مشکلی پیش آمد !!!'
-        this.typeNotif = false
-
       }
       } else {
         this.otpError = "کد وارد شده اشتباه است!";
@@ -135,6 +139,10 @@ export default {
         });
       }
       event.preventDefault();
+    },
+    checkIsLogined(){
+      return this.isLogined
+
     }
   }
   
@@ -227,12 +235,14 @@ export default {
         <p v-if="otpError" class="text-red-600 text-[12px] md:text-sm mt-1">
           {{ otpError }}
         </p>
-        <button
-          @click="verifyOtp"
-          class="w-full mt-4 bg-Fizico-color1 text-white text-[12px] p-3 rounded-md hover:bg-Fizico-color1/90"
+        <router-link
+        @click="verifyOtp"
+        :to='{name:"Dashboard"}'
+          class="block w-full mt-4 bg-Fizico-color1 text-white text-[12px] p-3 rounded-md hover:bg-Fizico-color1/90"
         >
           تأیید
-        </button>
+        </router-link
+        >
         <button
           @click="step = 1"
           class="w-full mt-4 text-gray-500 dark:text-gray-400 text-DanaLight text-[10px] lg:text-[14px]"

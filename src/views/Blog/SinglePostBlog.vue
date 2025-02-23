@@ -146,7 +146,7 @@
         <!-- Post Short Link -->
         <ShowNotif :text="textNotif" :type="typeNotif" ref="notif" />
         <div
-          class="hidden lg:block bg-white dark:bg-slate-800 rounded-2xl p-5 text-center"
+          class="bg-white dark:bg-slate-800 rounded-2xl p-5 text-center"
         >
           <span
             class="font-Morabba font-light text-lg text-zinc-800 dark:text-slate-100 mb-3"

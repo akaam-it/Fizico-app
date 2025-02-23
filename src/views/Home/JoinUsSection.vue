@@ -1,7 +1,7 @@
 <template>
      <section  class="container relative lg:mt-52 lg:my-20 my-8 ">
        
-        <div class=" mx-auto font-Morabba dark:bg-Fizico-color1/30 backdrop-blur bg-Fizico-color1/90 rounded-3xl">
+        <div class=" mx-auto font-Morabba  bg-Fizico-color1 dark:bg-slate-800 rounded-3xl">
             <div class="flex flex-wrap ">
                 <div class="w-full relative z-1">
                     <!-- Image -->

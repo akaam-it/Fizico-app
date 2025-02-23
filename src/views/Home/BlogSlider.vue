@@ -264,14 +264,14 @@ export default {
 <style>
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: #005ae9 !important;
+  background-color: #0EA5E9 !important;
   color: #fff !important;
   border-radius: 8px !important;
   font-size: 5px !important;
   transition: background-color 0.1s ease !important;
   width: 24px !important;
   height: 34px !important;
-  box-shadow: 0px 0px 5px inset rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 640px) {
   .swiper-button-next,

@@ -27,7 +27,7 @@ export default {
     BackToUp,
     
   },
-  props: { hidden: Boolean },
+  props: { hidden: Boolean, dashboard:Boolean },
 
   data() {
     return {
@@ -89,15 +89,16 @@ export default {
   <nav
     class=" w-full tracking-tighter mt-2  md:py-2 transition-all"
     :class="(hidden ? 'hidden' : '')"  >
-    <MenuBottomMobile class='lg:hidden' />
+    <MenuBottomMobile  v-if='!dashboard'  class='lg:hidden' />
   <SearchBox v-model="isSearchOpen" @checkOverlay="checkOverlay" />
-<BackToUp/>
+<BackToUp v-if='!dashboard'/>
     <div
       id="Nav"
-      class="flex items-center justify-center lg:justify-between container"
+      class="flex items-center container"
+      :class='dashboard?"justify-end":"justify-center lg:justify-between"'
     >
       <!-- Right Nav -->
-      <div class="flex items-center justify-center lg:gap-x-3">
+      <div v-if='!dashboard' class="flex items-center justify-center lg:gap-x-3">
         <!-- Logo Img -->
         <div class="lg:ml-6 hover:scale-110 transition-all">
           <router-link to="/" class="flex items-center font-Morabba">
@@ -175,11 +176,11 @@ export default {
         </div>
       </div>
       <!-- Left Nav -->
-      <div class="flex items-center justify-center gap-x-3">
+      <div class="flex  items-center justify-center gap-x-3">
         <!-- Nav Buttons -->
-        <div class="hidden lg:flex items-center justify-center gap-x-2">
+        <div class="hidden lg:flex items-center justify-end gap-x-2">
           <!-- Search Button -->
-          <CircleButton svgID="search" @click="toggleSearch"/>
+          <CircleButton  v-if='!dashboard'  svgID="search" @click="toggleSearch"/>
           <!-- Change Theme Button -->
           <CircleButton
             :svgID="`${isDarkMode ? 'sun' : 'moon'}`"
@@ -199,7 +200,8 @@ export default {
         </div>
 
         <!-- Login Button -->
-        <router-link
+        <router-link 
+         v-if='!dashboard' 
           :to="{ name: 'Login' }"
           class="hidden cursor-pointer lg:flex items-center justify-center gap-x-1 sm:bg-Fizico-color1 text-white py-2 md:px-3 rounded-3xl lg:hover:-mb-1 transition-all"
         >

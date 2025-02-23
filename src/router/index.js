@@ -5,6 +5,7 @@ import Login from "@/views/Login/Login.vue";
 import Blog from "@/views/Blog/Blog.vue";
 import SinglePostBlog from "@/views/Blog/SinglePostBlog.vue";
 import NotFound from "@/views/NotFound/NotFound.vue";
+import Dashboard from "@/views/Dashboard/Dashboard.vue";
 
 const routes = [
   {
@@ -48,6 +49,8 @@ const routes = [
     component: Login,
     meta: { title: "ورود به حساب کاربری" },
   },
+  { path: "/dashboard", component: Dashboard , meta:{title:"پنل کاربری"} },
+
 ];
 
 const router = createRouter({

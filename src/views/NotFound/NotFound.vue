@@ -1,10 +1,12 @@
 <template>
-<div class="relative h-screen flex items-center justify-center">
-<BlurGradient />
+<SvgIcons/>
 <Nav class="hidden"/>
+
+<div class="relative h-screen flex  items-center justify-center">
+<BlurGradient />
   <section class="container">
     <div class="py-8 px-4 mx-auto lg:py-16 lg:px-6">
-      <div class="flex flex-col items-center justify-center  mx-auto text-center ">
+      <div class="flex shrink-0 flex-col items-center justify-center  mx-auto text-center ">
       <img src="/images/404.svg" class="block w-full md:w-2/3">
         <h1
           class="font-DanaBold text-zinc-800 dark:text-gray-300 my-4 text-[18px] lg:text-2xl tracking-tight font-extrabold mt-8 lg:mt-16 "
@@ -28,4 +30,5 @@
 <script setup>
 import BlurGradient from "@/components/BlurGradient.vue";
 import Nav from "@/components/Header/Nav.vue";
+import SvgIcons from "@/components/SvgIcons.vue";
 </script>

@@ -14,7 +14,7 @@
     >
       <swiper-slide v-for="(item, index) in slidesData" :key="index">
         <div
-          class="flex flex-col gap-x-0 items-stretch justify-center px-5 pt-3 bg-Fizico-color1 dark:bg-blue-900 rounded-3xl "
+          class="flex flex-col gap-x-0 items-stretch justify-center px-5 pt-3  bg-Fizico-color1 dark:bg-slate-800 rounded-3xl "
         >
          <div class=" relative flex justify-between ">
             <span class="block text-slate-900/60">
@@ -32,7 +32,7 @@
             class="block rounded-2xl w-12 lg:w-20 mb-2 -mt-10 lg:-mt-14 mx-auto"
             :src="item.image"
             :alt="item.name"
-            style="box-shadow: 0 0 5px #005ae9"
+            style="box-shadow: 0 0 5px #0EA5E9"
           />
           <h2 class="text-[0.8rem] lg:text-[1.2rem] font-semibold font-DanaBold mx-auto">
             {{ item.name }}

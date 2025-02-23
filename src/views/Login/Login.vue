@@ -4,6 +4,7 @@ import SvgIcons from "../../components/SvgIcons.vue";
 import BlurGradient from "../../components/BlurGradient.vue";
 import ShowNotif from "../../components/ShowNotif.vue";
 export default {
+  
   components: { SvgIcons, BlurGradient, ShowNotif },
   data() {
     return {
@@ -146,7 +147,7 @@ export default {
   <ShowNotif :text="textNotif" :type="typeNotif" ref="notif" />
   <div class="flex items-center justufy-center h-[100vh] font-DanaBlack">
     <div
-      class="w-[70%] md:[40%] lg:w-[30%] mx-auto text-center dark:bg-slate-800 bg-white px-4 sm:px-8 pt-10 pb-5 rounded-2xl shadow"
+      class="w-[90%] md:[40%] lg:w-[30%] mx-auto text-center dark:bg-slate-800 bg-white px-4 sm:px-8 pt-10 pb-5 rounded-2xl shadow"
     >
       <div v-if="step === 1">
         <h1
@@ -184,12 +185,12 @@ export default {
         </button>
         <a
           href=""
-          class="block font-DanaLight text-gray-500 dark:text-gray-400 md:text-[14px] text-[10px] hover:text-Fizico-color1 my-2 underline"
+          class="block font-DanaLight text-gray-500 dark:text-gray-400 md:text-[14px] text-[12px] hover:text-Fizico-color1 my-2 underline"
         >
           شرایط و حریم خصوصی
         </a>
         <span
-          class="block md:text-[14px] text-[10px] mt-3 lg:mt-5 font-DanaLight dark:text-gray-200"
+          class="block md:text-[16px] text-[14px] mt-3 lg:mt-5 font-DanaLight dark:text-gray-200"
         >
           با عضویت در سایت، تمامی قوانین و شرایط استفاده از خدمات
           <span class="text-Fizico-color1 font-Morabba">فیزیکو</span> را پذیرفته

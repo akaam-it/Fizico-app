@@ -36,11 +36,11 @@ export default {
 
 <style>
 :root {
-  --plyr-color-main: #005ae9; 
+  --plyr-color-main: #0EA5E9; 
 }
 
 .plyr__progress input[type="range"] {
-  color: #005ae9 !important; 
+  color: #0EA5E9 !important; 
 }
 
 .plyr__progress__buffer {

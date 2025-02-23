@@ -20,11 +20,11 @@ export default {
       DanaLight: ['DanaLight'],
       DanaMedium: ['DanaMedium'],
       Morabba: ["Morabba"],
-     
+
     },
     extend: {
       colors: {
-        "Fizico-color1": "#005ae9",
+        "Fizico-color1": "#0EA5E9",
         "Fizico-color2": "#f7c32e",
         "Fizico-color3": "#03c98e",
         "Fizico-color4": "#d6293e",
@@ -47,15 +47,15 @@ export default {
         "::-webkit-scrollbar-thumb": {
           backgroundColor: "#6b7280",
         },
-       
         "@media (max-width: 768px)": {
           "::-webkit-scrollbar": {
             display: "none",
           },
         },
+
       });
     },
-    
-   
+
+
   ],
 };

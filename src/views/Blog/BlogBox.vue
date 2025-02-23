@@ -18,7 +18,7 @@
         <router-link :to="{ name: data.link } ">{{ data.title }}</router-link>
       </h3>
       <p
-        class="text-sm line-clamp-3 dark:text-slate-300 text-zinc-700 opacity-80"
+        class="text-sm line-clamp-2 dark:text-slate-300 text-zinc-700 opacity-80"
       >
         {{ data.summary }}
       </p>

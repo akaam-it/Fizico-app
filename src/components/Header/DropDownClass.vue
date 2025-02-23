@@ -7,7 +7,7 @@
                      v-for='(item,index) in dataR' :key="index"
 
                   :to="item.link"
-                  class="text-center block py-1.5 rounded-xl hover:dark:bg-slate-800 dark:bg-zinc-700/20 bg-Fizico-bg-button-white hover:text-Fizico-color1 transition-colors"
+                  class="text-center block py-1.5 rounded-xl dark:bg-zinc-700/20 bg-Fizico-bg-button-white/20 border border-Fizico-color1/10   hover:bg-Fizico-color1 hover:text-slate-100  transition-colors"
                 >
                   {{item.title}}
                 </router-link>
@@ -15,7 +15,7 @@
                      v-for='(item,index) in dataT' :key="index"
 
                   :to="item.link"
-                  class="text-center block py-1.5 rounded-xl hover:dark:bg-slate-800 dark:bg-zinc-700/20 bg-Fizico-bg-button-white hover:text-Fizico-color1 transition-colors"
+                  class="text-center block py-1.5 rounded-xl dark:bg-zinc-700/20 bg-Fizico-bg-button-white/20 border border-Fizico-color1/10   hover:bg-Fizico-color1 hover:text-slate-100  transition-colors"
                 >
                   {{item.title}}
                 </router-link>

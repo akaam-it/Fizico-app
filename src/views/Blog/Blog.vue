@@ -1,7 +1,7 @@
 <template>
   <div v-if="posts && posts.length > 0">
     <SvgIcons />
-    <div>
+    <div class='container'>
       <Nav />
       <SectionTitle
         title="مقالات"
@@ -37,8 +37,8 @@
         </button>
       </div>
 
-      <Footer />
     </div>
+      <Footer />
   </div>
 </template>
 

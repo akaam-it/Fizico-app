@@ -1,7 +1,7 @@
 <template>
   <SvgIcons />
   <div
-    class="flex h-screen font-DanaBlack overflow-hidden text-zinc-800 dark:text-slate-100"
+    class="flex h-screen  font-DanaBlack overflow-hidden text-zinc-800 dark:text-slate-100"
   >
     <!-- Sidebar -->
 
@@ -44,7 +44,7 @@
 
     <!-- Main Content -->
 
-    <main class="flex-1 pt-1 pb-5 px-5 font-DanaLight overflow-auto">
+    <main class=" container flex-1 pt-1 pb-5 px-5 font-DanaLight overflow-auto">
       <div
         class="flex w-full items-end justify-between -mt-2 mb-2 border-b dark:border-gray-500/20 border-gray-500/30"
       >

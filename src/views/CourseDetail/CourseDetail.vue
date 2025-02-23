@@ -1,5 +1,6 @@
 <template>
-  <div v-if="course" class="font-DanaBlack container">
+<div>
+<div v-if="course" class="font-DanaBlack container">
     <SvgIcons />
     <Nav />
     <!-- Breadcrumb -->
@@ -359,6 +360,7 @@
   </div>
 
   <Footer />
+  </div>
 </template>
 
 <script setup>

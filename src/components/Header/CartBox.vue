@@ -84,6 +84,12 @@ export default {
   props: {
     modelValue: Boolean,
   },
+  data() {
+    return {
+       textNotif: "",
+      typeNotif: false,
+    }
+  },
   setup() {
     const cart = useCartStore();
 
@@ -99,7 +105,8 @@ export default {
       return parseFloat(price.replace(/,/g, "")).toLocaleString();
     };
     const removeFromCart = (courseId) => {
-  cart.items = cart.items.filter(item => item.id !== courseId);
+    cart.items = cart.items.filter(item => item.id !== courseId);
+ 
 };
 
     return { cart, totalPrice, formatPrice,removeFromCart };

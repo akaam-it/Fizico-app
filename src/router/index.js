@@ -6,6 +6,12 @@ import Blog from "@/views/Blog/Blog.vue";
 import SinglePostBlog from "@/views/Blog/SinglePostBlog.vue";
 import NotFound from "@/views/NotFound/NotFound.vue";
 import Dashboard from "@/views/Dashboard/Dashboard.vue";
+import Questions from "@/views/Dashboard/Questions.vue";
+import MyCourses from "@/views/Dashboard/MyCourses.vue";
+import EditProfile from "@/views/Dashboard/EditProfile.vue";
+import Walet from "@/views/Dashboard/Walet.vue";
+import Tickets from "@/views/Dashboard/Tickets.vue";
+import MyAccount from "@/views/Dashboard/MyAccount.vue";
 
 const routes = [
   {
@@ -49,8 +55,38 @@ const routes = [
     component: Login,
     meta: { title: "ورود به حساب کاربری" },
   },
-  { path: "/dashboard", component: Dashboard , meta:{title:"پنل کاربری"} },
-
+  {
+    path: "/dashboard",
+    redirect: "/dashboard/home",
+    component: Dashboard,
+    meta: { title: "پنل کاربری" },
+    children: [
+      {
+        path: "home",
+        component: MyAccount,
+      },
+      {
+        path: "my-courses",
+        component: MyCourses,
+      },
+      {
+        path: "edit-profile",
+        component: EditProfile,
+      },
+      {
+        path: "walet",
+        component: Walet,
+      },
+      {
+        path: "questions",
+        component: Questions,
+      },
+      {
+        path: "tickets",
+        component: Tickets,
+      },
+    ],
+  },
 ];
 
 const router = createRouter({
